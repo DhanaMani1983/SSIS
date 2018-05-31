@@ -1,0 +1,49 @@
+Blocking Transformations
+
+The simplest version of this is an aggregate transformation because an aggregate must process every row in the transformation before it produces a total or in the case of a SORT, it must go through every record before it finishes.
+
+These include:
+
+Aggregate
+Fuzzy Grouping
+Fuzzy Lookup
+Row Sampling
+Sort
+Term Extraction
+Script Component – When configured to receive all rows..
+Semi-Blocking Transformations
+
+These partially hold up a transformation for processing and they don’t need to read the entire data set before processing.  However, something usually has to happen to the record before it can move on.  For instance, it’s part of a Join, and it needs to process it’s part of the join before it can move on.
+
+These include:
+
+Data Mining Query
+Merge
+Merge Join
+Pivot
+Term Lookup
+Unpivot
+Union All
+Non-Blocking Transformations
+
+Here, no blocking takes place.  The row is process, and then it moves to the next step.
+
+These include:
+
+Audit
+Cache Transform
+Character Map
+Conditional Split
+Copy Column
+Data Conversion
+Derived Column
+DQS Cleansing
+Export Column
+Lookup
+Multicast
+OLE DB Command
+Percent Sampling
+Row Count
+Script Component – Except when configured for all.
+
+Finally, transformations are processed asynchronously or synchronously.  Non-blocking transformations are synchronous, while blocking and semi-blocking are asynchronous.
